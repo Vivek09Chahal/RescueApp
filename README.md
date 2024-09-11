@@ -8,5 +8,5 @@ This app is the part of my project in which we are making a rescue system which 
 
 * User can set the emergency contact itself will be listed from his contact book.
 
-*And we are also getting live location from our hardware prototype and send it with with emergency message.
+* And we are also getting live location from our hardware prototype and send it with with emergency message.
 Which will work on messaging that mean there is no need of the internet for this app to send emergency.
