@@ -5,6 +5,14 @@ struct ContentView: View {
     @StateObject private var locationManager = LocationManager()
 
     var body: some View {
+        
+        if let location = locationManager.location {
+            Text("Latitude: \(location.coordinate.latitude)")
+            Text("Longitude: \(location.coordinate.longitude)")
+        } else {
+            Text("Fetching location...")
+        }
+        
         VStack {
             TabView {
                 HomeView()
@@ -22,15 +30,7 @@ struct ContentView: View {
                         Label("Emergency Contacts", systemImage: "phone.fill")
                     }
             }
-            
-            if let location = locationManager.location {
-                Text("Latitude: \(location.coordinate.latitude)")
-                Text("Longitude: \(location.coordinate.longitude)")
-            } else {
-                Text("Getting location...")
-            }
         }
-        .padding()
         .onAppear {
             requestNotificationPermission()
         }

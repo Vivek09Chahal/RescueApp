@@ -1,13 +1,33 @@
 import UserNotifications
+import SwiftUI
 
 func requestNotificationPermission() {
     UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
-        if granted {
-            print("Notification permission granted.")
-        } else if let error = error {
-            print("Error requesting notification permission: \(error)")
+        DispatchQueue.main.async {
+            if granted {
+                print("Notification permission granted.")
+            } else if let error = error {
+                print("Error requesting notification permission: \(error)")
+            } else {
+                // Permission denied
+                showAlertForNotificationSettings()
+            }
         }
     }
+}
+
+func showAlertForNotificationSettings() {
+    guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+          let window = windowScene.windows.first else { return }
+    
+    let alert = UIAlertController(title: "Notifications Disabled", message: "Please enable notifications in Settings to receive important alerts.", preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+    alert.addAction(UIAlertAction(title: "Settings", style: .default, handler: { _ in
+        if let appSettings = URL(string: UIApplication.openSettingsURLString) {
+            UIApplication.shared.open(appSettings)
+        }
+    }))
+    window.rootViewController?.present(alert, animated: true, completion: nil)
 }
 
 func scheduleNotification() {
