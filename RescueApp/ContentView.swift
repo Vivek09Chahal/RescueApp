@@ -1,17 +1,16 @@
 import SwiftUI
-import CoreLocation
 
 struct ContentView: View {
-    @StateObject private var locationManager = LocationManager()
+//    @StateObject private var locationManager = LocationManager()
 
     var body: some View {
         
-        if let location = locationManager.location {
-            Text("Latitude: \(location.coordinate.latitude)")
-            Text("Longitude: \(location.coordinate.longitude)")
-        } else {
-            Text("Fetching location...")
-        }
+//        if let location = locationManager.location {
+//            Text("Latitude: \(location.coordinate.latitude)")
+//            Text("Longitude: \(location.coordinate.longitude)")
+//        } else {
+//            Text("Fetching location...")
+//        }
         
         VStack {
             TabView {

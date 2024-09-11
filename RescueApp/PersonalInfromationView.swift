@@ -6,35 +6,38 @@ struct PersonalInformationView: View {
     @State private var bloodGroup: String = UserDefaults.standard.string(forKey: "bloodGroup") ?? ""
     @State private var phoneNumber: String = UserDefaults.standard.string(forKey: "phoneNumber") ?? ""
     @State private var address: String = UserDefaults.standard.string(forKey: "address") ?? ""
-    @State private var isEditing: Bool = false
+    @State private var isEditing: Bool = true
 
     var body: some View {
         NavigationView {
-            Form {
-                Section(header: Text("Personal Information")) {
-                    TextField("Name", text: $name)
+            VStack() {
+                Section(header: Text("Information")) {
+                    InfoField(title: "Name", text: $name)
                         .disabled(!isEditing)
-                    TextField("Age", text: $age)
+                    InfoField(title: "Age", text: $age)
                         .disabled(!isEditing)
-                    TextField("Blood Group", text: $bloodGroup)
+                    InfoField(title: "Blood Group", text: $bloodGroup)
                         .disabled(!isEditing)
-                    TextField("Phone Number", text: $phoneNumber)
+                    InfoField(title: "Phone Number", text: $phoneNumber)
                         .disabled(!isEditing)
-                    TextField("Address", text: $address)
+                    InfoField(title: "Address", text: $address)
                         .disabled(!isEditing)
                 }
                 Section {
                     if isEditing {
                         Button(action: savePersonalInformation) {
                             Text("Save")
+                                .font(.title2)
                         }
                     } else {
                         Button(action: { isEditing = true }) {
                             Text("Edit")
+                                .font(.title2)
                         }
                     }
                 }
             }
+            .padding()
             .navigationTitle("Personal Information")
         }
     }
@@ -75,4 +78,29 @@ struct PersonalInformationView: View {
 
 #Preview {
     PersonalInformationView()
+}
+
+
+struct InfoField: View {
+    
+    let title:String
+    @Binding var text: String
+    @FocusState var isTyping: Bool
+    
+    var body: some View {
+        ZStack(alignment: .leading){
+            
+            TextField("", text: $text).padding(.leading)
+                .frame(height: 55).focused($isTyping)
+                .background(isTyping ? .blue : Color.primary, in:RoundedRectangle(cornerRadius: 14).stroke(lineWidth: 2))
+            Text(title).padding(.horizontal, 5)
+                .background(.fTitle.opacity(isTyping || !text.isEmpty ? 1 : 0))
+                .backgroundStyle(isTyping ? .blue : Color.primary)
+                .padding(.leading).offset(y: isTyping || !text.isEmpty ? -27 : 0)
+                .onTapGesture {
+                    isTyping.toggle()
+                }
+        }
+        .animation(.linear(duration: 0.2), value: isTyping)
+    }
 }

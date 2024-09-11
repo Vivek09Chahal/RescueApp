@@ -11,6 +11,7 @@
 		0C274ABC2C918CB20060F068 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C274ABB2C918CB20060F068 /* ContentView.swift */; };
 		0C274ABE2C918CB40060F068 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C274ABD2C918CB40060F068 /* Assets.xcassets */; };
 		0C274AC12C918CB40060F068 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C274AC02C918CB40060F068 /* Preview Assets.xcassets */; };
+		0CCCF6F72C91C0D700280C80 /* temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCCF6F62C91C0D700280C80 /* temp.swift */; };
 		E2468A5F2C918FDA003EC8C3 /* PersonalInfromationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2468A5E2C918FDA003EC8C3 /* PersonalInfromationView.swift */; };
 		E2468A612C918FFC003EC8C3 /* EmergencyContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2468A602C918FFC003EC8C3 /* EmergencyContactsView.swift */; };
 		E2468A632C91907B003EC8C3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2468A622C91907B003EC8C3 /* HomeView.swift */; };
@@ -27,6 +28,7 @@
 		0C274ABB2C918CB20060F068 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0C274ABD2C918CB40060F068 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C274AC02C918CB40060F068 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0CCCF6F62C91C0D700280C80 /* temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temp.swift; sourceTree = "<group>"; };
 		E2468A5E2C918FDA003EC8C3 /* PersonalInfromationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfromationView.swift; sourceTree = "<group>"; };
 		E2468A602C918FFC003EC8C3 /* EmergencyContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactsView.swift; sourceTree = "<group>"; };
 		E2468A622C91907B003EC8C3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				E2468A602C918FFC003EC8C3 /* EmergencyContactsView.swift */,
 				E2A54E252C91985F0049FDCD /* ContactPickerView.swift */,
 				E2468A6A2C9196CD003EC8C3 /* testView.swift */,
+				0CCCF6F62C91C0D700280C80 /* temp.swift */,
 				E2468A682C91943D003EC8C3 /* UserNotifications.swift */,
 				E2468A642C91913F003EC8C3 /* AddContactView.swift */,
 				E2468A5E2C918FDA003EC8C3 /* PersonalInfromationView.swift */,
@@ -164,6 +167,7 @@
 				E2468A672C91915B003EC8C3 /* Model.swift in Sources */,
 				E2468A5F2C918FDA003EC8C3 /* PersonalInfromationView.swift in Sources */,
 				0C274ABC2C918CB20060F068 /* ContentView.swift in Sources */,
+				0CCCF6F72C91C0D700280C80 /* temp.swift in Sources */,
 				E2468A692C91943D003EC8C3 /* UserNotifications.swift in Sources */,
 				0C274ABA2C918CB20060F068 /* RescueAppApp.swift in Sources */,
 				E2A54E262C91985F0049FDCD /* ContactPickerView.swift in Sources */,

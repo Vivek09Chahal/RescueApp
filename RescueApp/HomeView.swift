@@ -1,6 +1,9 @@
 import SwiftUI
+import CoreLocation
 
 struct HomeView: View {
+    @StateObject private var locationManager = LocationManager()
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -13,6 +16,14 @@ struct HomeView: View {
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack(alignment: .leading, spacing: 20) {
+
+                        if let location = locationManager.location {
+                            Text("Latitude: \(location.coordinate.latitude)")
+                            Text("Longitude: \(location.coordinate.longitude)")
+                        } else {
+                            Text("Fetching location...")
+                        }
+                    
                     HStack(alignment: .bottom){
                         Image(systemName: "exclamationmark.triangle.fill")
                             .resizable()
