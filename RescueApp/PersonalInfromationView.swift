@@ -47,6 +47,30 @@ struct PersonalInformationView: View {
         UserDefaults.standard.set(address, forKey: "address")
         isEditing = false
     }
+
+    private func gatherPersonalInformation() -> String {
+        let name = UserDefaults.standard.string(forKey: "name") ?? "N/A"
+        let age = UserDefaults.standard.string(forKey: "age") ?? "N/A"
+        let bloodGroup = UserDefaults.standard.string(forKey: "bloodGroup") ?? "N/A"
+        let phoneNumber = UserDefaults.standard.string(forKey: "phoneNumber") ?? "N/A"
+        let address = UserDefaults.standard.string(forKey: "address") ?? "N/A"
+        
+        return """
+        Name: \(name)
+        Age: \(age)
+        Blood Group: \(bloodGroup)
+        Phone Number: \(phoneNumber)
+        Address: \(address)
+        """
+    }
+
+    private func sendEmergencyMessage() {
+        let personalInfo = gatherPersonalInformation()
+        let emergencyMessage = "Emergency! Please help. Here is my personal information:\n\(personalInfo)"
+        
+        // Code to send the emergency message
+        print(emergencyMessage) // Replace with actual message sending logic
+    }
 }
 
 #Preview {
